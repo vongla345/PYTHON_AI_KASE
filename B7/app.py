@@ -34,10 +34,10 @@ class Window(Tk):
         
         Button(pta, text='Speak the text',command = lambda:self.speak_text(filename.get(), page.get())).place(x=10, y=180)
     def speak_text(self, filename, page):
+        # Kiem tra xem nguoi dung da nhap vao trang va duong dan file chua
         if not filename or not page:
             mb.showerror('Error', 'Please enter the filename and page number')
             return
-        mb.showinfo('Info', 'Please wait for a moment')
         book = open(filename, 'rb')
         pdfReader = PyPDF2.PdfReader(book)
         #Khai báo reader
